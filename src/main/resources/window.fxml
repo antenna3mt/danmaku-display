@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="danmaku.display.Controller">
+    <tabs>
+        <Tab closable="false" text="Panel">
+            <content>
+                <VBox>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                    <children>
+                        <TitledPane animated="false" collapsible="false" text="Connection">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                            <content>
+                                <VBox>
+                                    <children>
+                                        <TextField fx:id="serverText" promptText="Connect server">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <TextField fx:id="tokenText" promptText="Token">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </VBox.margin>
+                                        </TextField>
+                                        <Button mnemonicParsing="false" onAction="#connect" text="Connect">
+                                            <VBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </VBox.margin>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" text="Control">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                            <content>
+                                <HBox>
+                                    <children>
+                                        <MenuButton fx:id="monitorMenu" mnemonicParsing="false" onAction="#setMonitor" text="Monitor">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </MenuButton>
+                                        <ToggleButton fx:id="fetchToggleButton" mnemonicParsing="false" onAction="#toggleFetch" text="Fetch">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </ToggleButton>
+                                        <Button mnemonicParsing="false" onAction="#clearDisplay" text="Clear">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button mnemonicParsing="false" onAction="#test" text="Test">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" text="Settings">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                            <content>
+                                <VBox>
+                                    <children>
+                                        <HBox>
+                                            <children>
+                                                <Label prefHeight="30.0" prefWidth="80.0" text="Font Size: ">
+                                                    <HBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="fontSizeText" prefHeight="30.0" promptText="Font Size">
+                                                    <HBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                    </HBox.margin>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                                <Label prefHeight="30.0" prefWidth="80.0" text="Duration: ">
+                                                    <HBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                    </HBox.margin>
+                                                </Label>
+                                                <TextField fx:id="durationText" prefHeight="30.0" promptText="Duration">
+                                                    <HBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                    </HBox.margin>
+                                                </TextField>
+                                            </children>
+                                        </HBox>
+                                        <HBox>
+                                            <children>
+                                                <Button mnemonicParsing="false" onAction="#updateSettings" text="Update">
+                                                    <HBox.margin>
+                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" text="Push Danmaku">
+                            <VBox.margin>
+                                <Insets bottom="10.0" />
+                            </VBox.margin>
+                            <content>
+                                <HBox>
+                                    <children>
+                                        <TextField fx:id="danmakuText" prefWidth="235.0" promptText="Danmaku">
+                                            <HBox.margin>
+                                                <Insets right="5.0" />
+                                            </HBox.margin>
+                                        </TextField>
+                                        <Button fx:id="pushButton" mnemonicParsing="false" onAction="#push" prefWidth="60.0" text="Push" />
+                                    </children>
+                                </HBox>
+                            </content>
+                        </TitledPane>
+                    </children>
+                </VBox>
+            </content>
+        </Tab>
+        <Tab closable="false" text="Status">
+            <content>
+                <TextArea fx:id="statusTextArea" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+            </content>
+        </Tab>
+        <Tab closable="false" text="Logs">
+            <content>
+                <TextArea fx:id="logsTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
