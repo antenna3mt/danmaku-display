@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<TabPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="danmaku.display.Controller">
+<TabPane xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.solidmatrices.danmaku.display.Controller">
     <tabs>
         <Tab closable="false" text="Panel">
             <content>
@@ -24,7 +24,7 @@
                     <children>
                         <TitledPane animated="false" collapsible="false" text="Connection">
                             <VBox.margin>
-                                <Insets bottom="10.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin>
                             <content>
                                 <VBox>
@@ -48,18 +48,34 @@
                                 </VBox>
                             </content>
                         </TitledPane>
-                        <TitledPane animated="false" collapsible="false" text="Control">
-                            <VBox.margin>
-                                <Insets bottom="10.0" />
-                            </VBox.margin>
+                        <TitledPane text="Screen">
                             <content>
                                 <HBox>
                                     <children>
-                                        <MenuButton fx:id="monitorMenu" mnemonicParsing="false" onAction="#setMonitor" text="Monitor">
+                                        <Button mnemonicParsing="false" onAction="#refreshScreens" text="Refresh">
+                                            <HBox.margin>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                        <MenuButton fx:id="screenMenu" mnemonicParsing="false" text="Select Screen">
                                             <HBox.margin>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                             </HBox.margin>
                                         </MenuButton>
+                                    </children>
+                                </HBox>
+                            </content>
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                        </TitledPane>
+                        <TitledPane animated="false" collapsible="false" text="Control">
+                            <VBox.margin>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </VBox.margin>
+                            <content>
+                                <HBox>
+                                    <children>
                                         <ToggleButton fx:id="fetchToggleButton" mnemonicParsing="false" onAction="#toggleFetch" text="Fetch">
                                             <HBox.margin>
                                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -81,7 +97,7 @@
                         </TitledPane>
                         <TitledPane animated="false" collapsible="false" text="Settings">
                             <VBox.margin>
-                                <Insets bottom="10.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin>
                             <content>
                                 <VBox>
@@ -129,7 +145,7 @@
                         </TitledPane>
                         <TitledPane animated="false" collapsible="false" text="Push Danmaku">
                             <VBox.margin>
-                                <Insets bottom="10.0" />
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                             </VBox.margin>
                             <content>
                                 <HBox>
@@ -151,11 +167,6 @@
         <Tab closable="false" text="Status">
             <content>
                 <TextArea fx:id="statusTextArea" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
-            </content>
-        </Tab>
-        <Tab closable="false" text="Logs">
-            <content>
-                <TextArea fx:id="logsTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
             </content>
         </Tab>
     </tabs>
